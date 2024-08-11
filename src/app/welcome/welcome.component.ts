@@ -1,5 +1,6 @@
 import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment ';
 
 @Component({
   selector: 'app-welcome',
@@ -7,10 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./welcome.component.scss'],
 })
 export class WelcomeComponent implements AfterViewInit {
+  public imagenes!: string;
   @ViewChild('welcomeContent', { static: false }) welcomeContent!: ElementRef;
   @ViewChild('pokeballLoader', { static: false }) pokeballLoader!: ElementRef;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.imagenes = environment.envVar.IMAGEN_URL + "mask_group.svg"
+  }
 
   public ngAfterViewInit() {
     if (!this.welcomeContent) {

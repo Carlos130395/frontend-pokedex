@@ -3,5 +3,6 @@ export const environment = {
 
   envVar: {
     BACKEND_URL: 'https://pokeapi.co/api/v2/',
+    IMAGEN_URL: 'https://imagen.indeci.gob.pe/assets/pokedex/'
   },
 };
