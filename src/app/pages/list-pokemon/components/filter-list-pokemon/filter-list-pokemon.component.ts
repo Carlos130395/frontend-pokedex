@@ -6,18 +6,18 @@ import { debounceTime } from 'rxjs';
 @Component({
   selector: 'app-filter-list-pokemon',
   templateUrl: './filter-list-pokemon.component.html',
-  styleUrls: ['./filter-list-pokemon.component.scss']
+  styleUrls: ['./filter-list-pokemon.component.scss'],
 })
 export class FilterListPokemonComponent implements OnInit {
-  public searchControl = new FormControl<string | null | undefined>(''); // Permite también undefined
+  public searchControl = new FormControl<string | null | undefined>('');
 
   constructor(private filterService: PokemonFilterService) {}
 
-  public ngOnInit(isTesting: boolean = false): void { // Añadir un parámetro para indicar que es un test
-    this.searchControl.valueChanges.pipe(
-      isTesting ? (source) => source : debounceTime(300) // Elimina debounceTime en modo test
-    ).subscribe(searchTerm => {
-      this.filterService.setSearchTerm(searchTerm ?? '');
-    });
+  public ngOnInit(isTesting: boolean = false): void {
+    this.searchControl.valueChanges
+      .pipe(isTesting ? (source) => source : debounceTime(300))
+      .subscribe((searchTerm) => {
+        this.filterService.setSearchTerm(searchTerm ?? '');
+      });
   }
 }

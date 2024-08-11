@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 15px; /* Add padding to handle smaller screens */
+  padding: 0 15px;
 }
 
 .ellipse-container {
@@ -16,14 +16,14 @@
   width: 100%;
   max-width: 1152px;
   height: 100%;
-  padding: 20px; /* Ensure spacing on smaller screens */
+  padding: 20px;
 }
 
 .ellipse {
-  width: 50vw; /* Adjust width based on viewport */
-  height: 50vw; /* Adjust height based on viewport */
-  max-width: 206px; /* Set max width */
-  max-height: 206px; /* Set max height */
+  width: 50vw;
+  height: 50vw;
+  max-width: 206px;
+  max-height: 206px;
   background: #f22539;
   border-radius: 50%;
   display: flex;
@@ -34,25 +34,25 @@
 }
 
 .ellipse img {
-  width: 75vw; /* Adjust width based on viewport */
-  height: auto; /* Maintain aspect ratio */
-  max-width: 306px; /* Set max width */
-  max-height: 296px; /* Set max height */
+  width: 75vw;
+  height: auto;
+  max-width: 306px;
+  max-height: 296px;
   object-fit: contain;
   position: relative;
-  top: -10%; /* Adjusted for smaller screens */
-  left: 5%; /* Adjusted for smaller screens */
+  top: -10%;
+  left: 5%;
 }
 
 h1 {
-  font-size: 6vw; /* Adjust font size based on viewport */
-  max-font-size: 1.5rem; /* Set max font size */
+  font-size: 6vw;
+  max-font-size: 1.5rem;
   margin-top: 20px;
 }
 
 p {
-  font-size: 5vw; /* Adjust font size based on viewport */
-  max-font-size: 1rem; /* Set max font size */
+  font-size: 5vw;
+  max-font-size: 1rem;
   color: #6c757d;
   margin: 10px 0 20px;
 }
@@ -60,9 +60,9 @@ p {
 .btn {
   background-color: #dc3545;
   color: white;
-  padding: 2vw 4vw; /* Adjust padding based on viewport */
-  font-size: 4vw; /* Adjust font size based on viewport */
-  max-font-size: 1rem; /* Set max font size */
+  padding: 2vw 4vw;
+  font-size: 4vw;
+  max-font-size: 1rem;
   border-radius: 30px;
   border: none;
   cursor: pointer;
@@ -79,9 +79,9 @@ p {
 }
 
 .pokeball-loader {
-  width: 20vw; /* Adjust size based on viewport */
-  max-width: 100px; /* Set max width */
-  height: auto; /* Maintain aspect ratio */
+  width: 20vw;
+  max-width: 100px;
+  height: auto;
   background-image: url("../../assets/images/loader.svg");
   background-size: cover;
   animation: spin 2s linear infinite;
@@ -102,7 +102,6 @@ p {
   }
 }
 
-/* Media queries for larger screens */
 @media (min-width: 768px) {
   .ellipse {
     width: 206px;

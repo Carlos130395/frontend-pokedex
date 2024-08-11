@@ -3,23 +3,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0; /* Elimina cualquier padding adicional */
+  padding: 0;
 }
 
 .card {
   width: 100%;
-  max-width: 600px; /* Ajusta el ancho máximo de la tarjeta si es necesario */
+  max-width: 600px;
   padding: 20px;
   box-shadow: none;
 }
 
 .card-body {
   padding: 0;
-  text-align: left; /* Cambia el alineamiento a la izquierda si es necesario */
+  text-align: left;
 }
 
 .transparent-card {
-  background-color: transparent; /* Mantiene el fondo transparente */
+  background-color: transparent;
   border: none;
 }
 

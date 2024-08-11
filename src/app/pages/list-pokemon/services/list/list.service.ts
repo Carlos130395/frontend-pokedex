@@ -13,7 +13,7 @@ export class ListService {
   constructor(private http: HttpClient) {}
 
   // Método para obtener un Pokémon por su nombre o ID
-  getPokemonList(
+  public getPokemonList(
     limit: number = 20,
     offset: number = 0
   ): Observable<IResponsePokemon> {
@@ -22,7 +22,7 @@ export class ListService {
   }
 
   // Método para obtener un Pokémon por su nombre o ID
-  getPokemonByIdOrName(idOrName: string | number): Observable<any> {
+  public getPokemonByIdOrName(idOrName: string | number): Observable<any> {
     const url = `${this.apiUrl}pokemon/${idOrName}`;
     return this.http.get<any>(url);
   }

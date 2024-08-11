@@ -16,7 +16,7 @@ describe('PokemonFilterService', () => {
   it('should have an initial search term of an empty string', (done) => {
     service.searchTerm$.subscribe(term => {
       expect(term).toBe('');
-      done(); // Llamamos done para indicar que la prueba asíncrona ha terminado
+      done();
     });
   });
 
@@ -26,7 +26,7 @@ describe('PokemonFilterService', () => {
 
     service.searchTerm$.subscribe(term => {
       expect(term).toBe(newTerm);
-      done(); // Llamamos done para indicar que la prueba asíncrona ha terminado
+      done();
     });
   });
 });

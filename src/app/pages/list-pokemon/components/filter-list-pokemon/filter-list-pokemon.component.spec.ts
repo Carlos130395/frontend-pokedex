@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 describe('FilterListPokemonComponent', () => {
   let component: FilterListPokemonComponent;
   let fixture: ComponentFixture<FilterListPokemonComponent>;
-  let filterServiceMock: any; // Asegúrate de definir el mock del servicio
+  let filterServiceMock: any;
 
   beforeEach(async () => {
     filterServiceMock = {
@@ -15,9 +15,9 @@ describe('FilterListPokemonComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [FilterListPokemonComponent],
-      imports: [ReactiveFormsModule], // Importa ReactiveFormsModule para los formularios reactivos
+      imports: [ReactiveFormsModule],
       providers: [
-        { provide: PokemonFilterService, useValue: filterServiceMock } // Proveedor del mock del servicio
+        { provide: PokemonFilterService, useValue: filterServiceMock }
       ]
     })
     .compileComponents();
