@@ -1,0 +1,287 @@
+.pokemon-list-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.pokemon-list {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.pokemon-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.pokemon-item:hover {
+  background-color: #f1f1f1;
+}
+
+.pokemon-name {
+  font-size: 1rem;
+  color: #333;
+}
+
+.pokemon-favorite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #f9f9f9;
+  border-radius: 50%;
+}
+
+.pokemon-favorite i {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.pokemon-favorite .fas {
+  color: #fdd835;
+}
+
+.pokemon-footer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.pokemon-footer-btn {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  color: #aaa;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.pokemon-footer-btn i {
+  margin-right: 5px;
+}
+
+/* Botón "All" */
+.pokemon-footer-btn.all-btn {
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+.pokemon-footer-btn.all-btn:hover {
+  background-color: #c82333;
+  color: #ffffff;
+}
+
+/* Botón "Favorites" */
+.pokemon-footer-btn.favorites-btn {
+  background-color: #f9f9f9;
+  color: #aaa;
+}
+
+.pokemon-footer-btn.favorites-btn:hover {
+  background-color: #ffeb3b;
+  color: #555;
+}
+
+/* Estilos personalizados para el modal */
+#favoritesModal .modal-content {
+  background-color: #f7f7f9;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  color: #333;
+}
+
+#favoritesModal .modal-header {
+  background-color: #dc3545;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#favoritesModal .modal-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+#favoritesModal .btn-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+#favoritesModal .btn-close:hover {
+  opacity: 1;
+}
+
+#favoritesModal .modal-body {
+  padding: 20px;
+}
+
+#favoritesModal .modal-body ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#favoritesModal .modal-body li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1rem;
+}
+
+#favoritesModal .modal-body li:last-child {
+  border-bottom: none;
+}
+
+#favoritesModal .modal-footer {
+  border-top: none;
+  padding-top: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#favoritesModal .btn-secondary {
+  background-color: #6c757d;
+  border-radius: 30px;
+  color: white;
+  padding: 10px 20px;
+}
+
+#favoritesModal .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes ligeramente redondeados */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  margin: 0 5px; /* Espacio entre los botones */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.pagination-btn:hover {
+  background-color: #c82333; /* Color más oscuro al pasar el mouse */
+}
+
+.pagination-btn:disabled {
+  background-color: #6c757d; /* Color gris cuando está deshabilitado */
+  cursor: not-allowed; /* Cambia el cursor a "no permitido" */
+  opacity: 0.65; /* Reduce la opacidad cuando está deshabilitado */
+}
+
+.modal-content {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  padding: 0;
+  border-bottom: none;
+  background-color: transparent;
+}
+
+.modal-header .btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.modal-body {
+  padding: 0;
+
+}
+
+.modal-body img {
+  border-bottom: 5px solid green;
+
+}
+
+.pokemon-details {
+  background-color: white;
+}
+
+.pokemon-details ul {
+  padding: 0;
+  margin: 0;
+}
+
+.pokemon-details li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.pokemon-image-container {
+  position: relative;
+  width: 100%; /* El contenedor ahora ocupa todo el ancho disponible */
+  max-width: 200px; /* Puedes establecer un ancho máximo si lo deseas */
+  margin: 0 auto; /* Centra el contenedor */
+  background-image: url('../../../../../assets/images/fondo.svg'); /* Ruta a tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pokemon-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}

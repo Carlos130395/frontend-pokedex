@@ -1,0 +1,119 @@
+<div class="pokemon-list-container">
+  <div class="pokemon-list">
+    <div
+      class="pokemon-item"
+      *ngFor="let pokemon of filteredPokemons; let i = index"
+      (click)="toggleFavorite(i)"
+    >
+      <span class="pokemon-name">{{ pokemon.name }}</span>
+      <span class="pokemon-favorite">
+        <i [class]="pokemon.isFavorite ? 'fas fa-star' : 'far fa-star'"></i>
+      </span>
+    </div>
+  </div>
+
+  <!-- Controles de paginación -->
+  <div class="pagination-controls">
+    <button
+      class="pagination-btn"
+      (click)="previousPage()"
+      [disabled]="offset === 0"
+    >
+      Previous
+    </button>
+    <button
+      class="pagination-btn"
+      (click)="nextPage()"
+      [disabled]="offset + limit >= totalPokemons"
+    >
+      Next
+    </button>
+  </div>
+
+  <!-- Botones de selección de favoritos -->
+  <div class="pokemon-footer">
+    <button class="pokemon-footer-btn all-btn" (click)="selectAllFavorites()">
+      <i class="fas fa-list"></i> All
+    </button>
+    <button
+      class="pokemon-footer-btn favorites-btn"
+      (click)="showFavorites($event)"
+    >
+      <i class="fas fa-star"></i> Favorites
+    </button>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="pokemonModal"
+  tabindex="-1"
+  aria-labelledby="pokemonModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="pokemon-image-container">
+          <img
+            [src]="selectedPokemon?.sprites?.front_default"
+            alt="{{ selectedPokemon?.name }}"
+            class="pokemon-image"
+          />
+        </div>
+        <div class="pokemon-details p-3">
+          <ul class="list-unstyled mb-4">
+            <li><strong>Name:</strong> {{ selectedPokemon?.name }}</li>
+            <li><strong>Weight:</strong> {{ selectedPokemon?.weight }} kg</li>
+            <li><strong>Height:</strong> {{ selectedPokemon?.height }} dm</li>
+            <li>
+              <strong>Types:</strong>
+              <span *ngFor="let type of selectedPokemon?.types">
+                {{ type }}
+              </span>
+            </li>
+          </ul>
+          <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-danger flex-grow-1 me-2">
+              Share to my friends
+            </button>
+            <button type="button" class="btn btn-warning rounded-circle">
+              ★
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para mostrar los favoritos -->
+<div
+  class="modal fade"
+  id="favoritesModal"
+  tabindex="-1"
+  aria-labelledby="favoritesModalLabel"
+  aria-hidden="true"
+  style="display: none"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="favoritesModalLabel">Pokémon Favoritos</h5>
+        <button
+          type="button"
+          class="btn-close"
+          (click)="closeFavoritesModal()"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li *ngFor="let pokemon of favorites">
+            {{ pokemon.name }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

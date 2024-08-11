@@ -1,0 +1,139 @@
+.container {
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15px; /* Add padding to handle smaller screens */
+}
+
+.ellipse-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1152px;
+  height: 100%;
+  padding: 20px; /* Ensure spacing on smaller screens */
+}
+
+.ellipse {
+  width: 50vw; /* Adjust width based on viewport */
+  height: 50vw; /* Adjust height based on viewport */
+  max-width: 206px; /* Set max width */
+  max-height: 206px; /* Set max height */
+  background: #f22539;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin-bottom: 20px;
+}
+
+.ellipse img {
+  width: 75vw; /* Adjust width based on viewport */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 306px; /* Set max width */
+  max-height: 296px; /* Set max height */
+  object-fit: contain;
+  position: relative;
+  top: -10%; /* Adjusted for smaller screens */
+  left: 5%; /* Adjusted for smaller screens */
+}
+
+h1 {
+  font-size: 6vw; /* Adjust font size based on viewport */
+  max-font-size: 1.5rem; /* Set max font size */
+  margin-top: 20px;
+}
+
+p {
+  font-size: 5vw; /* Adjust font size based on viewport */
+  max-font-size: 1rem; /* Set max font size */
+  color: #6c757d;
+  margin: 10px 0 20px;
+}
+
+.btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 2vw 4vw; /* Adjust padding based on viewport */
+  font-size: 4vw; /* Adjust font size based on viewport */
+  max-font-size: 1rem; /* Set max font size */
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #c82333;
+}
+
+.transparent-card {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.pokeball-loader {
+  width: 20vw; /* Adjust size based on viewport */
+  max-width: 100px; /* Set max width */
+  height: auto; /* Maintain aspect ratio */
+  background-image: url("../../assets/images/loader.svg");
+  background-size: cover;
+  animation: spin 2s linear infinite;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Media queries for larger screens */
+@media (min-width: 768px) {
+  .ellipse {
+    width: 206px;
+    height: 206px;
+  }
+
+  .ellipse img {
+    width: 306px;
+    height: 296px;
+    top: -20px;
+    left: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .pokeball-loader {
+    width: 100px;
+    height: 100px;
+    background-image: url("../../assets/images/Loader.svg");
+    background-size: cover;
+    animation: spin 2s linear infinite;
+  }
+}
